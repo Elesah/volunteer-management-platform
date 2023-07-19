@@ -59,7 +59,9 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "process-timeout": 600,
+        "sort-packages": true,
+        "allow-plugins": true
     },
     "autoload": {
         "psr-4": {
@@ -86,6 +88,9 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "pre-install-cmd": [
+            "Composer\\Config::disableProcessTimeout"
         ]
     },
     "conflict": {
